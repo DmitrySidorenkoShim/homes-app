@@ -10,12 +10,13 @@ import { RouterLink } from '@angular/router';
     template: `
     <section class="listing">
       <img
-        class="listing-photo" 
-        [ngSrc]="housingLocation.photo" 
+        class="listing-photo"
+        [ngSrc]="housingLocation.photo"
         [alt]="'Exterior photo of ' + housingLocation.name"
-        loading="lazy"
-        width="400"
-        height="200"
+        [width]="housingLocation.photoWidth ?? 400"
+        [height]="housingLocation.photoHeight ?? 200"
+        [priority]="priority"
+        [attr.loading]="priority ? undefined : 'lazy'"
       />
       <h2 class="listing-heading">{{ housingLocation.name }}</h2>
       <p class="listing-location">{{ housingLocation.city }}, {{ housingLocation.state }}</p>
@@ -26,4 +27,6 @@ import { RouterLink } from '@angular/router';
 })
 export class HousingLocationComponent {
   @Input() housingLocation!: HousingLocation;
+  /** Set to true for the LCP image (e.g. first listing on home). */
+  @Input() priority = false;
 }

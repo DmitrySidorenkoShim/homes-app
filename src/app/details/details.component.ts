@@ -15,10 +15,11 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
       <img
         class="listing-photo"
         [ngSrc]="housingLocation?.photo ?? '/assets/example-house.jpg'"
-        width="400"
-        height="200"
+        [width]="housingLocation?.photoWidth ?? 400"
+        [height]="housingLocation?.photoHeight ?? 200"
         alt="Exterior photo of {{ housingLocation?.name }}"
         crossorigin
+        priority
       />
       <section class="listing-description">
         <h2 class="listing-heading">{{ housingLocation?.name }}</h2>

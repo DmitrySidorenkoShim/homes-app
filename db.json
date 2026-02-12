@@ -56,6 +56,8 @@
             "city": "Oakland",
             "state": "CA",
             "photo": "/assets/r-architecture-JvQ0Q5IkeMM-unsplash.jpg",
+            "photoWidth": 400,
+            "photoHeight": 600,
             "availableUnits": 2,
             "wifi": true,
             "laundry": true
@@ -76,6 +78,8 @@
             "city": "Oakland",
             "state": "CA",
             "photo": "/assets/r-architecture-GGupkreKwxA-unsplash.jpg",
+            "photoWidth": 400,
+            "photoHeight": 267,
             "availableUnits": 2,
             "wifi": true,
             "laundry": true
@@ -86,6 +90,8 @@
             "city": "Oakland",
             "state": "CA",
             "photo": "/assets/saru-robert-9rP3mxf8qWI-unsplash.jpg",
+            "photoWidth": 400,
+            "photoHeight": 534,
             "availableUnits": 10,
             "wifi": false,
             "laundry": false
@@ -96,6 +102,8 @@
             "city": "Portland",
             "state": "OR",
             "photo": "/assets/webaliser-_TPTXZd9mOo-unsplash.jpg",
+            "photoWidth": 400,
+            "photoHeight": 300,
             "availableUnits": 6,
             "wifi": true,
             "laundry": true

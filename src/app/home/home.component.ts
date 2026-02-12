@@ -17,8 +17,8 @@ import { SignalsComponent } from '../signals/signals.component';
       </form>
     </section>
     <section class="results">
-      @for (housingLocation of filteredLocationList; track housingLocation) {
-        <app-housing-location [housingLocation]="housingLocation" />
+      @for (housingLocation of filteredLocationList; track housingLocation.id; let i = $index) {
+        <app-housing-location [housingLocation]="housingLocation" [priority]="i === 0" />
       }
     </section>
     <section>
