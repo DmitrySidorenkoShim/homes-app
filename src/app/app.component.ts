@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -17,6 +17,6 @@ import { RouterModule } from '@angular/router';
     </main>
   `,
   styleUrls: ['./app.component.css'],
-  imports: [RouterModule],
+  imports: [RouterOutlet, RouterLink],
 })
 export class AppComponent {}
