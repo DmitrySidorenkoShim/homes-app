@@ -2,10 +2,10 @@ import { Component, signal, computed, ChangeDetectionStrategy } from '@angular/c
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-signals',
-  standalone: true,
-  imports: [CommonModule],
-  template: `
+    standalone: true,
+    selector: 'app-signals',
+    imports: [CommonModule],
+    template: `
     <div class="user-profile">
       <h1>User Dashboard</h1>
       <div class="status-indicator" [class]="userStatus()">
@@ -38,8 +38,8 @@ import { CommonModule } from '@angular/common';
       </div>
     </div>
   `,
-  styleUrls: ['./signals.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    styleUrls: ['./signals.component.css'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SignalsComponent {
   userStatus = signal<'online' | 'away' | 'offline'>('offline');

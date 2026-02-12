@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
-  standalone: true,
-  selector: 'app-root',
-  template: `
+    standalone: true,
+    selector: 'app-root',
+    template: `
     <main>
       <header class="brand-name">
         <a [routerLink]="['/']">
@@ -16,7 +16,7 @@ import { RouterLink, RouterOutlet } from '@angular/router';
       </section>
     </main>
   `,
-  styleUrls: ['./app.component.css'],
-  imports: [RouterOutlet, RouterLink],
+    styleUrls: ['./app.component.css'],
+    imports: [RouterOutlet, RouterLink]
 })
 export class AppComponent {}

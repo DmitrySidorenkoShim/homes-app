@@ -7,10 +7,10 @@ import { NgOptimizedImage } from '@angular/common';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-details',
-  standalone: true,
-  imports: [CommonModule, NgOptimizedImage, ReactiveFormsModule],
-  template: `
+    standalone: true,
+    selector: 'app-details',
+    imports: [CommonModule, NgOptimizedImage, ReactiveFormsModule],
+    template: `
     <article>
       <img
         class="listing-photo"
@@ -49,7 +49,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
       </section>
     </article>
   `,
-  styleUrls: ['./details.component.css']
+    styleUrls: ['./details.component.css']
 })
 export class DetailsComponent {
   route: ActivatedRoute = inject(ActivatedRoute);

@@ -4,10 +4,10 @@ import { HousingLocation } from '../housing-location';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-housing-location',
-  standalone: true,
-  imports: [CommonModule, RouterLink, NgOptimizedImage],
-  template: `
+    standalone: true,
+    selector: 'app-housing-location',
+    imports: [CommonModule, RouterLink, NgOptimizedImage],
+    template: `
     <section class="listing">
       <img
         class="listing-photo" 
@@ -22,7 +22,7 @@ import { RouterLink } from '@angular/router';
       <a [routerLink]="['/details', housingLocation.id]">Learn More</a>
     </section>
   `,
-  styleUrls: ['./housing-location.component.css']
+    styleUrls: ['./housing-location.component.css']
 })
 export class HousingLocationComponent {
   @Input() housingLocation!: HousingLocation;
