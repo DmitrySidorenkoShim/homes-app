@@ -1,12 +1,12 @@
 import { Component, Input } from '@angular/core';
-import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { HousingLocation } from '../housing-location';
 import { RouterLink } from '@angular/router';
 
 @Component({
     standalone: true,
     selector: 'app-housing-location',
-    imports: [CommonModule, RouterLink, NgOptimizedImage],
+    imports: [RouterLink, NgOptimizedImage],
     template: `
     <section class="listing">
       <img

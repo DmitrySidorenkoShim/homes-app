@@ -1,10 +1,10 @@
 import { Component, signal, computed, ChangeDetectionStrategy } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
 
 @Component({
     standalone: true,
     selector: 'app-signals',
-    imports: [CommonModule],
+    imports: [],
     template: `
     <div class="user-profile">
       <h1>User Dashboard</h1>
@@ -12,12 +12,15 @@ import { CommonModule } from '@angular/common';
         <span class="status-dot"></span>
         Status: {{ userStatus() }}
       </div>
-
+    
       <div class="status-info">
         <div class="notifications">
           <strong>Notifications:</strong>
-          <ng-container *ngIf="notificationsEnabled(); else notifOff">Enabled</ng-container>
-          <ng-template #notifOff>Disabled</ng-template>
+          @if (notificationsEnabled()) {
+            Enabled
+          } @else {
+            Disabled
+          }
         </div>
         <div class="message">
           <strong>Message:</strong>
@@ -25,11 +28,14 @@ import { CommonModule } from '@angular/common';
         </div>
         <div class="working-hours">
           <strong>Within Working Hours:</strong>
-          <ng-container *ngIf="isWithinWorkingHours(); else outsideHours">Yes</ng-container>
-          <ng-template #outsideHours>No</ng-template>
+          @if (isWithinWorkingHours()) {
+            Yes
+          } @else {
+            No
+          }
         </div>
       </div>
-
+    
       <div class="status-controls">
         <button (click)="goOnline()" [disabled]="userStatus() === 'online'">Go Online</button>
         <button (click)="goAway()" [disabled]="userStatus() === 'away'">Set Away</button>
@@ -37,7 +43,7 @@ import { CommonModule } from '@angular/common';
         <button (click)="toggleStatus()" class="toggle-btn">Cycle Status</button>
       </div>
     </div>
-  `,
+    `,
     styleUrls: ['./signals.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
