@@ -13,6 +13,18 @@ const routeConfig: Routes = [
     component: DetailsComponent,
     title: 'Details page',
   },
+  {
+    path: 'tutorial',
+    loadComponent: () =>
+      import('./tutorial/tutorial.component').then((m) => m.TutorialComponent),
+    title: 'Tutorial demos',
+  },
+  {
+    path: 'todos',
+    loadComponent: () =>
+      import('./todos/todos.component').then((m) => m.TodosComponent),
+    title: 'Todos',
+  },
 ];
 
 export default routeConfig;

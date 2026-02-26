@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "angular-cli": {
+      "command": "/Users/dmytrosydorenko/.asdf/installs/nodejs/22.18.0/bin/npx",
+      "args": [
+        "-y",
+        "@angular/cli",
+        "mcp"
+      ]
+    }
+  }
+}

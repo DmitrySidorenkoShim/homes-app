@@ -8,8 +8,17 @@ export class HousingService {
   url = 'http://localhost:3000/locations';
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
-    const data = await fetch(this.url);
-    return (await data.json()) ?? [];
+    try {
+      const res = await fetch(this.url);
+      if (res.ok) {
+        return (await res.json()) ?? [];
+      }
+    } catch {
+      // json-server not running: fallback to static db.json
+    }
+    const fallback = await fetch('/db.json');
+    const data = (await fallback.json()) as { locations?: HousingLocation[] };
+    return data.locations ?? [];
   }
 
   async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
